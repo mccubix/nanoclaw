@@ -9,8 +9,8 @@
 import fs from 'fs';
 import path from 'path';
 import pino from 'pino';
-// @ts-expect-error no type declarations
-import qrcode from 'qrcode-terminal';
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const qrcode = require('qrcode-terminal');
 import readline from 'readline';
 
 import {
