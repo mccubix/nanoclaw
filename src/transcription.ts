@@ -49,6 +49,12 @@ async function transcribeWithOpenAI(audioBuffer: Buffer, config: TranscriptionCo
   }
 }
 
+export async function transcribeAudioBuffer(audioBuffer: Buffer): Promise<string | null> {
+  const config = DEFAULT_CONFIG;
+  if (!config.enabled) return null;
+  return transcribeWithOpenAI(audioBuffer, config);
+}
+
 export async function transcribeAudioMessage(msg: WAMessage, sock: WASocket): Promise<string | null> {
   const config = DEFAULT_CONFIG;
 
